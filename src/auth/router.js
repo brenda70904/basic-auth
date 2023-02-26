@@ -21,6 +21,9 @@ router.post('/signup', async (req, res, next) => {
 });
 
 router.post('/signin',basicAuth, async (req, res, next) => {
-  res.status(200).send(req.user);
-
+  try {
+    res.status(200).send(req.user);
+  } catch (error) {
+    next(error);
+  };
 });

@@ -1,7 +1,7 @@
 "use strict";
 
 const base64 = require("base-64");
-const bcrypt = requier("bcrypt");
+const bcrypt = require("bcrypt");
 const { userModel } = require("../models")
 
 module.exports = async (req, res, next) => {
