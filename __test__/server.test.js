@@ -24,8 +24,10 @@ describe("/signup route", () => {
     expect(response.body.username).toEqual("brenda");
   });
 
-  
+  it("should allow sign in", async ()=>{
+    let response = await request.post('./signin');
 
-
-
+    expect(response.status).toBe(200);
+  });
+  it("should get all user data")
 });
