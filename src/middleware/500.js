@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
 module.exports = (error, req, res, next) => {
-    res.status(500).send({
-        error: 500, 
-        route: req.path,
-        query: req.query,
-        body: req.body,
-        message: `Server error:${error.message}`
-        // message:typeof(error) === "string" ? error : `Server Error: ${error.message}`,
-    });
+  res.status(500).send({
+    error: 500,
+    route: req.path,
+    query: req.query,
+    body: req.body,
+    message: `Server error:${error.message}`,
+    // message:typeof(error) === 'string' ? error : `Server Error: ${error.message}`,
+  });
 };

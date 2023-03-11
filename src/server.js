@@ -1,30 +1,20 @@
-"use strict";
+'use strict';
 
-require("dotenv").config();
-const express = require("express");
-// const { sequelizeDatabase } = require("./auth/models");
-// const authRouter = require("./auth/router");
+require('dotenv').config();
+const express = require('express');
+const router = require('./auth/router');
 
 const PORT = process.env.PORT || 3002;
 const app = express();
 
 app.use(express.json());
 
-// Process FORM intput and put the data on req.body
+// Process FORM intput and put the data on req.body 
 app.use(express.urlencoded({ extended: true }));
-
-
-// sequelizeDatabase.sync()
-//     .then(() => {
-//         app.listen(3000, () => console.log('server up'));
-//     }).catch(e => {
-//         console.error('Could not start server', e.message);
-//     });
-
-
+app.use(router);
 
 const start = () => {
-    app.listen(PORT, console.log(`listening on ${PORT}`));
+  app.listen(PORT, () => console.log(`listening on ${PORT}`));
 };
 
-module.export = { app, start };
+module.exports = { app, start };

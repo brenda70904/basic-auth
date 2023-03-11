@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
-require("dotenv").config();
-const { start } = require("./src/server");
+require('dotenv').config();
+const { start } = require('./src/server');
 const { sequelizeDatabase } = require('./src/auth/models');
 
 sequelizeDatabase.sync()
   .then(() => {
-    console.log("successful connection");
+    console.log('successful connection');
     // app.listen(3000, () => console.log('server up'));
-    // start();
+    start();
   }).catch(e => {
     console.error('Could not start server', e.message);
   });
